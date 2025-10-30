@@ -1,0 +1,57 @@
+import React from 'react'
+import { 
+  FiUser, FiUsers, FiMessageSquare, FiVideo, FiMic, FiCamera, 
+  FiShare2, FiDownload, FiUpload, FiLogOut, FiSettings, 
+  FiEdit, FiX, FiMenu, FiChevronDown, FiChevronUp, 
+  FiBell, FiSearch, FiFolder, FiFile, FiCode, 
+  FiPlay, FiSquare, FiPause, FiVolume2, FiHeadphones,
+  FiWifi, FiWifiOff, FiCheck, FiAlertCircle,
+  FiClock, FiCalendar, FiStar, FiLock,
+  FiEye, FiEyeOff, FiMaximize2, FiMinimize2,
+  FiCopy, FiPhone
+} from 'react-icons/fi'
+
+export const Icons = {
+  User: FiUser,
+  Users: FiUsers,
+  Message: FiMessageSquare,
+  Video: FiVideo,
+  Mic: FiMic,
+  Camera: FiCamera,
+  Share: FiShare2,
+  Download: FiDownload,
+  Upload: FiUpload,
+  Logout: FiLogOut,
+  Settings: FiSettings,
+  Edit: FiEdit,
+  Close: FiX,
+  Menu: FiMenu,
+  ChevronDown: FiChevronDown,
+  ChevronUp: FiChevronUp,
+  Bell: FiBell,
+  Search: FiSearch,
+  Folder: FiFolder,
+  File: FiFile,
+  Code: FiCode,
+  Play: FiPlay,
+  Stop: FiSquare,
+  Pause: FiPause,
+  Volume: FiVolume2,
+  Headphones: FiHeadphones,
+  Wifi: FiWifi,
+  WifiOff: FiWifiOff,
+  Check: FiCheck,
+  Alert: FiAlertCircle,
+  Clock: FiClock,
+  Calendar: FiCalendar,
+  Star: FiStar,
+  Lock: FiLock,
+  Eye: FiEye,
+  EyeOff: FiEyeOff,
+  Maximize: FiMaximize2,
+  Minimize: FiMinimize2,
+  Copy: FiCopy,
+  Phone: FiPhone
+}
+
+export default Icons
