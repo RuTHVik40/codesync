@@ -28,41 +28,46 @@ export const UserProvider = ({ children }) => {
 
   // Load user data and preferences on component mount
   useEffect(() => {
-    const storedUser = localStorage.getItem('codesync_user')
+    const storedUser = localStorage.getItem('user')
+    const storedToken = localStorage.getItem('token')
     const storedPreferences = localStorage.getItem('codesync_preferences')
-    
-    if (storedUser) {
-      const user = JSON.parse(storedUser)
-      setCurrentUser(user)
+    if (storedUser && storedToken) {
+      setCurrentUser(JSON.parse(storedUser))
       setIsLoggedIn(true)
     }
-    
     if (storedPreferences) {
       setUserPreferences(JSON.parse(storedPreferences))
     }
   }, [])
 
-  const login = (userData) => {
-    const user = {
-      id: 'local',
-      name: userData.name,
-      email: userData.email,
-      avatar: userData.name.charAt(0).toUpperCase(),
-      color: '#3B82F6',
-      role: userData.role || 'developer',
+  const login = (user, token) => {
+    // Enrich user object with needed display fields for UI
+    const baseName = user.username || user.name || user.email?.split('@')[0] || 'User';
+    const roleColors = {
+      developer: '#3B82F6',
+      designer: '#8B5CF6',
+      manager: '#10B981',
+      reviewer: '#F59E0B',
+      guest: '#6B7280'
+    };
+    const enhancedUser = {
+      ...user,
+      name: baseName,
+      avatar: baseName[0].toUpperCase(),
+      color: roleColors[user.role || 'guest'],
       isOnline: true,
-      joinedAt: new Date().toISOString(),
-      lastActive: new Date().toISOString()
-    }
-    setCurrentUser(user)
+    };
+    setCurrentUser(enhancedUser)
     setIsLoggedIn(true)
-    localStorage.setItem('codesync_user', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(enhancedUser))
+    localStorage.setItem('token', token)
   }
 
   const logout = () => {
     setCurrentUser(null)
     setIsLoggedIn(false)
-    localStorage.removeItem('codesync_user')
+    localStorage.removeItem('user')
+    localStorage.removeItem('token')
   }
 
   const updateProfile = (userData) => {
@@ -72,7 +77,7 @@ export const UserProvider = ({ children }) => {
       lastActive: new Date().toISOString()
     }
     setCurrentUser(updatedUser)
-    localStorage.setItem('codesync_user', JSON.stringify(updatedUser))
+    localStorage.setItem('user', JSON.stringify(updatedUser))
   }
 
   const updatePreferences = (newPreferences) => {
