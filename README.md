@@ -44,7 +44,7 @@ The platform integrates:
 |----------|--------------|
 | 👥 **Real-Time Collaboration** | Live interviews with video, chat, and shared editor |
 | 💻 **Collaborative Code Editor** | Multiple users can edit code simultaneously |
-| 🤖 **AI Assistance** | Code generation & explanation using Gemini |
+| 🤖 **AI Assistance** | Code Compilation using Gemini |
 | 💬 **Chat Integration** | Real-time messaging |
 | 📚 **Practice Problems** | Structured coding problems |
 | 📊 **Dashboard** | Track sessions & activity |
