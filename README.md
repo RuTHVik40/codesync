@@ -50,7 +50,7 @@ The platform integrates:
 | 📊 **Dashboard** | Track sessions & activity |
 | 🔐 **Authentication** | Clerk + JWT |
 | 🎨 **Modern UI** | Tailwind CSS + DaisyUI |
-| ⚡ **Real-Time Sync** | Stream API |
+| ⚡ **Real-Time Sync** | Stream API + Socket.io |
 
 ---
 
